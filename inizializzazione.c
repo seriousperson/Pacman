@@ -3,14 +3,14 @@
 
 extern char campo[200][200];
 
-void inizializzazione()
-{
-	struct pos position;
+struct pos *inizializzazione(struct pos *position)
+{	
+	position->object = '@';
+	position->points = 0;
+	position->x = 40; 
+	position->y = 60;
+	campo[position->x][position->y] = position->object; //points initialized correctly
 
-	position.x = 40;
-	position.y = 60;
-	position.object = '@';
-	position.points = 0;
-	campo[position.x][position.y] = position.object;
+return position;
 }
 

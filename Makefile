@@ -1,3 +1,7 @@
+ex: get_movements.o inizializzazione.o libs.h main.o stampa_campo.o presentation.o turn_off_terminalbuffer.o 
+	gcc -g -o ex get_movements.o inizializzazione.o libs.h main.o stampa_campo.o presentation.o turn_off_terminalbuffer.o
+
+
 main.o: main.c
 	cc -c main.c 
 
@@ -16,9 +20,6 @@ turn_off_terminalbuffer.o: turn_off_terminalbuffer.c
 presentation.o: presentation.c
 	cc -c presentation.c
 
-
-ex: get_movements.o inizializzazione.o libs.h main.o stampa_campo.o presentation.o turn_off_terminalbuffer.o 
-	cc -o ex get_movements.o inizializzazione.o libs.h main.o stampa_campo.o presentation.o turn_off_terminalbuffer.o
 
 clean:
 	rm *.o

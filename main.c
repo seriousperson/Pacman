@@ -3,17 +3,18 @@
 #include "libs.h"
 
 
-
 int main()
 {
-	presentation();
-
 	int controller = 0;
-	presentation();
-	stampa_campo(&controller);
 
-	while((controller = get_movements()) != EOF)
-		stampa_campo(&controller);
+	struct pos *position;
+
+	presentation();
+	position = inizializzazione(position); /*initializes the variable in the structure*/
+	stampa_campo(position);	/*print the game*/
+
+	while((controller = get_movements(position)) != EOF)
+		stampa_campo(position);
 	printf("YOU HAVE LOST!");
 
 return 0;

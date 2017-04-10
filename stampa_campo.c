@@ -50,7 +50,7 @@ char campo[200][200] = {
 			  "#################################################################################################################",
 		   };
 
-void stampa_campo(int *punti)
+void stampa_campo(struct pos *position)
 {
 
 	system("clear");
@@ -60,5 +60,5 @@ void stampa_campo(int *punti)
 		for(int z = 0; z <= 114; z++)
 			printf("%c", campo[i][z]);
 	}
-	printf("\npunti: %d\n", *punti);
+	printf("\npunti: %d\n", position->points);
 }
