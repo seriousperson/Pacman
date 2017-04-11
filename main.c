@@ -14,7 +14,10 @@ int main()
 	stampa_campo(position);	/*print the game*/
 
 	while((controller = get_movements(position)) != EOF)
+	{
 		stampa_campo(position);
+		get_enemy_movements(position);
+	}
 	printf("YOU HAVE LOST!");
 
 return 0;
