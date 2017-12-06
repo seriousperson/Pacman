@@ -1,28 +1,27 @@
 #include <stdio.h>
 #include "libs.h"
 
-extern char campo[200][200];
+extern char campo[30][102];
 
 int get_movements(struct pos *position)
 {
 	int c;
 	int controller = 1;
-
 	
 
-	turn_off_terminalbuffer(&c); /*this helps to insert an input without pressing enter*/
+	turn_off_terminalbuffer(&c); /*receives keyboard input without pressing enter*/
 	switch(c)
 	{
 		case 'a':
-			if(campo[position->x][--position->y]== '#') /*check if the next position is a '#'*/
+			if(campo[position->x][--position->y]== '#') /*check if the next position is a '#' UPDATED!!!*/
 			{
 				return EOF;
 			}
 			else if(campo[position->x][position->y] == '$') /*if it is a $*/
 			{
 			 	position->points+=1;			/*add +1 point*/
-				campo[position->x][++position->y] = ' ';/*make the previous position to be an empty "zone"*/
-				campo[position->x][--position->y] = position->object; /*return to the next position and put @*/
+				campo[position->x][++position->y] = ' ';/*where player was before is now empty*/
+				campo[position->x][--position->y] = position->object; /*put player a bit to the left*/
 				stampa_campo(position);					/*update changes*/
 			}
 			else if(campo[position->x][position->y] == ' ')
@@ -98,7 +97,7 @@ int get_movements(struct pos *position)
 				printf("problems");		/*this line will be printd if there is something wrong*/	
 			break;
 		default:
-			;
+			;//don't make changes if anyother key is pressed
 	}
 return controller;
 }

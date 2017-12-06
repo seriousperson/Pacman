@@ -19,7 +19,7 @@ struct pos
 int get_movements(struct pos *position);
 void turn_off_terminalbuffer(int *);
 void stampa_campo(struct pos *position);
-struct pos *inizializzazione(struct pos *positioni);
+void inizializzazione(struct pos *positioni);
 void get_enemy_movements();
 void presentation(void);
 

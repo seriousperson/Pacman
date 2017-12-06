@@ -5,17 +5,17 @@
 
 int main()
 {
-	int controller = 0;
+	int controller = 1;
 
 	struct pos *position;
 
 	presentation();
-	position = inizializzazione(position); /*initializes the variable in the structure*/
-	stampa_campo(position);	/*print the game*/
+	inizializzazione(position); /*initializes the variable in the structures enemy and player*/
+	stampa_campo(position);	/*print game*/
 
-	while((controller = get_movements(position)) != EOF)
+	while(controller == 1 && controller != EOF)
 	{
-		stampa_campo(position);
+		controller = get_movements(position);
 		get_enemy_movements(position);
 	}
 	printf("YOU HAVE LOST!");

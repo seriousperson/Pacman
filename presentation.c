@@ -5,8 +5,12 @@
 void presentation()
 {
 system("clear");
-printf("\n\n\n\n\n\t\t\tTHE GAME YOU ARE ABOUT TO PLAY\n\t\t\tIS THE MOST BEATUFULL GAME EVER!!!\n\t\t\tPRESS START TO PLAY\n");
+printf("\n\n\n\n\n\n\n\n\n :::::::::::::::::RULES::::::::::::\n");
+printf("1. Collect all dollars to increase score.");
+printf("\n2.Complete the previous point before the enemy gets you");
+printf("\n\n\n\n\ninsert any key to start");
+
 getchar();
-system("clear");
+system("clear");//clean screen
 }
 
